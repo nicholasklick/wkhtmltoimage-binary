@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+arch = case RUBY_PLATFORM
+  when /64.*linux/
+    'amd64'
+  when /linux/
+    'linux-i386'
+  else
+    raise "Invalid platform. Must be running linux."
+end
+
+args = $*.map { |x| x.include?(' ') ? "'" + x + "'" : x }
+cmd = File.expand_path "#{File.dirname(__FILE__)}/../libexec/wkhtmltoimage-#{arch}"
+
+exec "#{cmd} #{args.join(' ')}"
