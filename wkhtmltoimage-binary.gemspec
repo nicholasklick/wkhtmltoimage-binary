@@ -7,8 +7,8 @@ Gem::Specification.new do |gem|
   gem.name          = "wkhtmltoimage-binary"
   gem.version       = Wkhtmltoimage::Binary::VERSION
   gem.authors       = ["themilkman"]
-  gem.description   = %q{Provides linux binaries for wkhtmltoimage project in an easily accessible package. Based on the wkhtmltopdf-binary gem of steerio. wkhtmltoimage is LGPL licenced.}
-  gem.summary       = %q{Provides linux binaries for wkhtmltoimage project in an easily accessible package.}
+  gem.description   = %q{Provides linux and Mac binaries for wkhtmltoimage project in an easily accessible package. Based on the wkhtmltopdf-binary gem of steerio. wkhtmltoimage is LGPL licenced.}
+  gem.summary       = %q{Provides linux and Mac binaries for wkhtmltoimage project in an easily accessible package.}
 
   gem.files         = `git ls-files`.split($/)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
