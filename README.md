@@ -1,4 +1,4 @@
-Provides linux binaries for wkhtmltoimage.
+Provides linux and Mac binaries for wkhtmltoimage.
 
 Uses the current Version of wkhtmltoimage (LGPL)
 http://code.google.com/p/wkhtmltopdf/
