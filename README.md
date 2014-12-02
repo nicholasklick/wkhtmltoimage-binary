@@ -7,3 +7,8 @@ Gem based on:
 https://rubygems.org/gems/wkhtmltopdf-binary
 https://github.com/steerio/wkhtmltopdf-binary
 
+
+## Installation
+```
+gem install wkhtmltopdf-binary
+```
