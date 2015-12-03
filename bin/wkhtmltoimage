@@ -1,13 +1,26 @@
 #!/usr/bin/env ruby
 
+require 'mkmf'
+
 arch = case RUBY_PLATFORM
   when /64.*linux/
-    case `lsb_release -c`
-    when /jessie/  # Debian 8 - Jessie
-      'jessie-amd64'
+    lsb_release_exe = find_executable('lsb_release')
+    if lsb_release_exe
+      case `lsb_release -c`
+      when /jessie/  # Debian 8 - Jessie
+        'jessie-amd64'
+      else
+        # alternative binary for CentOS 6.7
+        release = `cat /etc/*release`
+        if release.match(/CentOS release 6\.7/)
+          'centos67-amd64'
+        else
+          'amd64'
+        end
+      end 
     else
-      'amd64'
-    end
+      raise '`lsb_release` command not found on host OS. Please install.' 
+    end 
   when /linux/
     'i386'
   when /darwin/
