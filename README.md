@@ -1,14 +1,14 @@
-Provides linux and Mac binaries for wkhtmltoimage.
+Provides Linux and Mac binaries of `wkhtmltoimage`.
 
-Uses the current Version of wkhtmltoimage (LGPL)
-http://code.google.com/p/wkhtmltopdf/
+Uses the current Version of [`wkhtmltoimage` (LGPL)](http://wkhtmltopdf.org/)
 
-Gem based on:
-https://rubygems.org/gems/wkhtmltopdf-binary
-https://github.com/steerio/wkhtmltopdf-binary
+This gem is based on the [`wkhtmltopdf-binary`](https://rubygems.org/gems/wkhtmltopdf-binary) gem.
 
 
 ## Installation
 ```
-gem install wkhtmltopdf-binary
+gem install wkhtmltoimage-binary
 ```
+
+## Usage
+Running `wkhtmltoimage` will auto-select the correct binary for the current platform.
