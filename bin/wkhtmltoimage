@@ -2,7 +2,12 @@
 
 arch = case RUBY_PLATFORM
        when /64.*linux/
-         'amd64'
+          os = `. /etc/os-release 2> /dev/null && echo ${ID}_${VERSION_ID}`.strip
+          if os.start_with?('rocky_8') || os.start_with?('almalinux_8')
+            'centos8-x64'
+          else
+            'amd64'
+          end
        when /linux/
          'i386'
        when /64.*darwin/
