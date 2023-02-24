@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require 'rbconfig'
+
 arch = case RUBY_PLATFORM
        when /64.*linux/
          'amd64'
@@ -12,6 +14,9 @@ arch = case RUBY_PLATFORM
        else
          raise "Invalid platform. Must be running linux or Mac."
        end
+
+host_cpu = RbConfig::CONFIG['host_cpu']
+arch = 'darwin-x64' if host_cpu == 'arm'
 
 args = $*.map { |x| x.include?(' ') ? "'" + x + "'" : x }
 cmd = File.expand_path "#{File.dirname(__FILE__)}/../libexec/wkhtmltoimage-#{arch}"
